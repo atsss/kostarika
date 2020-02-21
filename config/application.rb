@@ -2,18 +2,33 @@ require_relative 'boot'
 
 require 'rails/all'
 
-# Require the gems listed in Gemfile, including any gems
-# you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
 module Kostarika
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration can go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded after loading
-    # the framework and any gems in your application.
+    config.time_zone = 'Central America'
+    config.i18n.load_path +=
+      Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+    config.i18n.default_locale = :ja
+    config.i18n.enforce_available_locales = true
+
+    config.assets.initialize_on_precompile = false
+    config.public_file_server.enabled = true
+    config.read_encrypted_secrets = true
+
+    config.generators do |g|
+      g.template_engine :slim
+
+      g.test_framework nil
+      g.factory_bot false
+
+      g.javascripts false
+      g.stylesheets false
+      g.helper false
+      g.assets false
+      g.jbuilder false
+    end
   end
 end
