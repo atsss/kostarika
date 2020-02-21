@@ -4,16 +4,18 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.5'
 
 gem 'bootsnap', require: false
+gem 'devise'
+gem 'enumerize'
+gem 'mysql2'
+gem 'paranoia'
 gem 'puma'
 gem 'rails', '6.0.2'
 gem 'sass-rails'
-gem 'sqlite3'
 gem 'webpacker'
+gem 'whiny_validation'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
-# Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
