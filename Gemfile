@@ -3,12 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
-gem 'rails', '6.0.2'
-gem 'sqlite3'
-gem 'puma'
-gem 'sass-rails'
-gem 'webpacker'
 gem 'bootsnap', require: false
+gem 'puma'
+gem 'rails', '6.0.2'
+gem 'sass-rails'
+gem 'sqlite3'
+gem 'webpacker'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
@@ -17,7 +17,6 @@ gem 'bootsnap', require: false
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
 
 group :development, :test do
   gem 'annotate'
@@ -35,10 +34,10 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console'
   gem 'listen'
   gem 'spring'
   gem 'spring-watcher-listen'
+  gem 'web-console'
 end
 
 group :test do
@@ -48,4 +47,4 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i(mingw mswin x64_mingw jruby)
