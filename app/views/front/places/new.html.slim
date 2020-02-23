@@ -1,3 +1,39 @@
-= form_with model: @place, url: front_places_path, local: true do |f|
-  = f.label :description
-  = f.rich_text_area :description
+section.hero
+  .hero-body
+    .container
+      h1.title
+        | 場所 作成
+
+.section
+  .container
+    = form_with model: @place, url: front_places_path, local: true do |f|
+      .field
+        .control
+          = f.label :name, class: 'label'
+          = f.text_field :name, class: 'input'
+
+      .field
+        = f.label :image, class: 'label'
+        .control
+          .file
+            = f.file_field :image
+
+      .field
+        .control
+          = f.label :lat, class: 'label'
+          = f.number_field :lat, class: 'input'
+
+      .field
+        .control
+          = f.label :lon, class: 'label'
+          = f.number_field :lon, class: 'input'
+
+      .field
+        .control
+          = f.label :description, class: 'label'
+          = f.rich_text_area :description
+
+      .field
+        .control
+          = f.button :submit, class: 'button is-link',  data: { disable_with: '処理中..' }
+            | 作成する
