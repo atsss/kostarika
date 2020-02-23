@@ -6,19 +6,18 @@ ruby '2.6.5'
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'enumerize'
+gem 'image_processing'
 gem 'mysql2'
 gem 'paranoia'
 gem 'puma'
 gem 'rails', '6.0.2'
 gem 'sass-rails'
+gem 'slim-rails'
 gem 'webpacker'
 gem 'whiny_validation'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
-
-# Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
 
 group :development, :test do
   gem 'annotate'
