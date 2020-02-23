@@ -19,5 +19,5 @@ require("trix")
 require("@rails/actiontext")
 
 
-// custom
-import "../styles/";
+// styles
+import "../styles/"
